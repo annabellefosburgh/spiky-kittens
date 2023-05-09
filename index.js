@@ -33,3 +33,11 @@ const questions = [
             name: 'shapeColor'
         }
     ]
+
+    function writeSVG(questions) {
+        inquirer.prompt(questions)
+        .then((response) => {
+            const writeLogo = writelogo(response)
+            fs.writeFile("logo.svg", writeLogo)
+        })
+    }
