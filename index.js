@@ -1,7 +1,7 @@
 //Including packages needed to run prompt & exported classes
 const fs = require('fs');
 const inquirer = require('inquirer')
-const {Circle, Square, Triangle} = require("./lib/shapes");
+const {Circle, Square, Triangle, Color} = require("./lib/shapes");
 
 //Building out a constructor in order to write the SVG file with placement for inquirer response
 //class svgFile {
