@@ -1,15 +1,9 @@
 //Including packages needed to run prompt & exported classes
 const fs = require('fs');
 const inquirer = require('inquirer')
-const {Circle, Square, Triangle, Color} = require("./lib/shapes");
+const {Circle, Square, Triangle} = require("./library/shapes");
 
-//Building out a constructor in order to write the SVG file with placement for inquirer response
-//class svgFile {
-    //constructor() {
-        //write svg file filling in color, text, and shape
-    //}
-//}
-//An array of questions that will be asked to receive user input.
+function init() {
 const questions = [
         {
             type: 'input',
@@ -24,7 +18,7 @@ const questions = [
         {
             type: 'list',
             message: 'Choose a shape for your logo.',
-            choices: ['Square', 'Triangle', 'Circle',],
+            choices: ['Circle', 'Square', 'Triangle',],
             name: 'shapeChoice'
         },
         {
@@ -34,8 +28,13 @@ const questions = [
         }
     ]
 
-    function writelogo(questions) {
-        return `${shapeChoice} `
+    function writelogo(data) {
+        return `
+        <svg width="300" height="200">
+        <text x="0" y="15" fill="${data.textColor}"> ${data.textInput} </text>
+        <${data.shapeChoice} fill="${data.shapeColor}" stroke="none" />
+        </svg>
+        `
     }
 
     function writeSVG(questions) {
@@ -43,7 +42,11 @@ const questions = [
         .then((response) => {
             console.log("Building your logo based on the data given...")
             const writeLogo = writelogo(response)
-            fs.writeFile("logo.svg", writeLogo)
+            fs.writeFile("logo.svg", writeLogo, () => {  console.log("error")})
             console.log("Logo generated successfully!")
         })
     }
+    writeSVG(questions);
+}
+
+init();
