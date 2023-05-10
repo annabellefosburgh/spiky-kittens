@@ -3,11 +3,10 @@ class Color {
     //including a constructor to take the color value and set it
     constructor() {
         this.shapeColor = ''
-
+    }
         setColor(shapeColor) {
             this.shapeColor = (shapeColor)
         }
-    }
 }
 //Creating classes that render the details to create each shape
 class Circle {

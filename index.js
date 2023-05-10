@@ -34,10 +34,16 @@ const questions = [
         }
     ]
 
+    function writelogo(questions) {
+        return `${shapeChoice} `
+    }
+
     function writeSVG(questions) {
         inquirer.prompt(questions)
         .then((response) => {
+            console.log("Building your logo based on the data given...")
             const writeLogo = writelogo(response)
             fs.writeFile("logo.svg", writeLogo)
+            console.log("Logo generated successfully!")
         })
     }
