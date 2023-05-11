@@ -3,9 +3,8 @@ const fs = require('fs');
 const inquirer = require('inquirer')
 const { Circle, Square, Triangle } = require("./library/shapes");
 
-
 inquirer
-    .prompt (
+    .prompt(
         [
             {
                 type: 'input',
@@ -30,33 +29,34 @@ inquirer
             }
         ])
 
-        .then(({ shapeChoice }, textInput, textColor, shapeColor) => {
-            console.log("Building your logo..")
-            let Shape;
-            switch (shapeChoice) {
-                case "Triangle":
-                    Shape = new Triangle();
-                    break;
+    .then(({ shapeChoice , textInput, textColor, shapeColor }) => {
+        console.log("Building your logo..")
+        let Shape;
+        switch (shapeChoice) {
+            case "Triangle":
+                Shape = new Triangle(shapeColor);
+                break;
 
-                case "Circle":
-                    Shape = new Circle();
-                    break;
+            case "Circle":
+                Shape = new Circle(shapeColor);
+                break;
 
-                case "Square":
-                    Shape = new Square();
-                    break;
-            }
-            fs.writeFile("logo.svg", writeSVG())
-        })
-        // .catch((error) => {
-        //     console.log("Error!")
-        // })
+            case "Square":
+                Shape = new Square(shapeColor);
+                break;
+        }
+        console.log(Shape)
+        fs.writeFile("./examples/logo.svg", writeSVG(Shape, textInput, textColor), () => { console.log("err") })
+    })
 
-    function writeSVG(shapeChoice, textInput, textColor, shapeColor) {
-        return `
+
+
+function writeSVG(Shape, textInput, textColor) {
+    return `
         <svg width="300" height="200">
-        <text x="0" y="15" fill="${textColor}"> ${textInput} </text>
-        <${shapeChoice} stroke="none" />
+        <text x="100" y="125" font-size="50" text-anchor="middle" fill="${textColor}"> ${textInput} </text>
+        < stroke="none" />
         </svg>
         `
-        }
+}
+
