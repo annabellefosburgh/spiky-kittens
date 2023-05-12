@@ -19,7 +19,7 @@ inquirer
             {
                 type: 'list',
                 message: 'Choose a shape for your logo.',
-                choices: ['circle', 'square', 'triangle',],
+                choices: ['Circle', 'Square', 'Triangle',],
                 name: 'shapeChoice'
             },
             {
@@ -46,17 +46,21 @@ inquirer
                 break;
         }
         console.log(Shape)
-        fs.writeFile("./examples/logo.svg", writeSVG(Shape, textInput, textColor), () => { console.log("err") })
+        fs.writeFile("./examples/logo.svg", writeSVG(Shape, textInput, textColor), (err) => {
+            if (err)
+                console.log(err);
+            else {
+                console.log("SVG drawn successfully!");
+            }
+        })
     })
 
-
-
-function writeSVG(Shape, textInput, textColor) {
-    return `
-        <svg width="300" height="200">
-        <text x="100" y="125" font-size="50" text-anchor="middle" fill="${textColor}"> ${textInput} </text>
-        < stroke="none" />
-        </svg>
-        `
-}
+    function writeSVG(Shape, textInput, textColor) {
+        return `
+            <svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+            ${Shape.render()}
+            <text x="100" y="100" font-size="50" text-anchor="middle" fill="${textColor}"> ${textInput} </text>
+            </svg>
+            `
+    }
 
