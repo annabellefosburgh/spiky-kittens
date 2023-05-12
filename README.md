@@ -23,13 +23,13 @@ To use this application, run "index node.js" into the command line and follow th
 [You can find the GitHub repository here.](https://github.com/annabellefosburgh/spiky-kittens)
 
 ## Walkthrough
-
+https://github.com/annabellefosburgh/heavy-dolphin/assets/124208861/f9e8fab8-eeb5-418f-9e0f-e37ba863c650. 
 
 ## Contributors
 [Annabelle Fosburgh](https://github.com/annabellefosburgh)
 
 ## Example Images
-
+[A link to the example SVG file](https://github.com/annabellefosburgh/spiky-kittens/blob/main/examples/logo.svg)     
 
 ## Sources
 [W3 SVG Tutorial](https://www.w3schools.com/graphics/svg_intro.asp)   
