@@ -4,9 +4,9 @@
 This application will ask simple questions in the command line to generate a logo in SVG format using the criteria entered by the user.
 
 ## Table of Contents
-[1. Installation](#Installation)
-[2. Usage](#Usage)
-[3. Repository](#Repository)
+[1. Installation](#Installation) 
+[2. Usage](#Usage) 
+[3. Repository](#Repository) 
 [4. Walkthrough](#Walkthrough)
 [5. Contributors](#Contributors)
 [6. Example Images](#Example Images)
