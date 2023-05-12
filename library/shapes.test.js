@@ -12,7 +12,7 @@ describe("Triangle test", () => {
   
   describe("Circle test", () => {
     test("test for a circle with a green background", () => {
-      const shape = new Triangle(color="green");
+      const shape = new Circle(color="green");
       expect(shape.render()).toEqual(
         '<circle cx="150" cy="100" r="100" fill="green" />'
       );
@@ -21,7 +21,7 @@ describe("Triangle test", () => {
   
   describe("Square test", () => {
     test("test for a square with a hex number background", () => {
-      const shape = new Triangle(color="#FEA96D");
+      const shape = new Square(color="#FEA96D");
       expect(shape.render()).toEqual(
         '<rect width="200" height="200" fill="#FEA96D" />'
       );
