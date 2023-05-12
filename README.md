@@ -9,7 +9,7 @@ This application will ask simple questions in the command line to generate a log
 [3. Repository](#Repository)   
 [4. Walkthrough](#Walkthrough)    
 [5. Contributors](#Contributors)   
-[6. Example Images](#Example Images)   
+[6. Example Images](#Example-Images)   
 [7. Sources](#Sources)   
 [8. License](#License)   
 
@@ -23,7 +23,10 @@ To use this application, run "index node.js" into the command line and follow th
 [You can find the GitHub repository here.](https://github.com/annabellefosburgh/spiky-kittens)
 
 ## Walkthrough
-https://github.com/annabellefosburgh/heavy-dolphin/assets/124208861/f9e8fab8-eeb5-418f-9e0f-e37ba863c650. 
+
+
+https://github.com/annabellefosburgh/spiky-kittens/assets/124208861/7eaa1d18-5d31-4865-8474-1529bf30fac4
+
 
 ## Contributors
 [Annabelle Fosburgh](https://github.com/annabellefosburgh)
